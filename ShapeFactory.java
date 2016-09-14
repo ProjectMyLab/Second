@@ -14,13 +14,16 @@ import java.awt.geom.Rectangle2D;
 
 public class ShapeFactory {
     public Shape shape;
+// задается базовая толщина линии
     public BasicStroke stroke = new BasicStroke(7.0f);
     public Paint paint;
     public int width = 25;
     public int height = 25;
 
     public ShapeFactory(int shape_type) {
+// получаем shape_type 
         switch (shape_type / 10) {
+// делим shape_type на десять и рисуем фигуру в зависимости от результата
             case 1: {
                 this.shape = ShapeFactory.createStar(3, new Point(0, 0), (double)this.width / 2.0, (double)this.width / 2.0);
                 break;
@@ -52,6 +55,7 @@ public class ShapeFactory {
             }
         }
         switch (shape_type % 10) {
+// получаем остаток от деления, и в зависимости от результата выбираем толщину линии
             case 1: {
                 this.stroke = new BasicStroke(3.0f);
                 break;
@@ -78,6 +82,7 @@ public class ShapeFactory {
     }
 
     private static Shape createStar(int arms, Point center, double rOuter, double rInner) {
+// рисуем звезду согласно заданим параметрам
         double angle = 3.141592653589793 / (double)arms;
         GeneralPath path = new GeneralPath();
         int i = 0;
