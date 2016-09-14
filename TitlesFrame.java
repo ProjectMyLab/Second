@@ -14,9 +14,9 @@ extends JFrame {
     private void initUI() {
         this.setTitle("\u041a\u0440\u0438\u0432\u044b\u0435 \u0444\u0438\u0433\u0443\u0440\u044b");
         this.setDefaultCloseOperation(3);
-// при создании TitlesPanel задаем параметр для выполнения задания согласно варианту
+// when creating TitlesPanel set the parameters for the job according to the embodiment
         this.add(new TitlesPanel(34));
-// задаем размеры формы
+// sets the size of the form
         this.setSize(350, 350);
         this.setLocationRelativeTo(null);
     }
