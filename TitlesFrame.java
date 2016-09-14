@@ -12,18 +12,17 @@ extends JFrame {
     }
 
     private void initUI() {
+/** Инициализация, задаем число в TitlesPanel для выполнения варианта*/
         this.setTitle("\u041a\u0440\u0438\u0432\u044b\u0435 \u0444\u0438\u0433\u0443\u0440\u044b");
         this.setDefaultCloseOperation(3);
-// when creating TitlesPanel set the parameters for the job according to the embodiment
         this.add(new TitlesPanel(34));
-// sets the size of the form
         this.setSize(350, 350);
         this.setLocationRelativeTo(null);
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable(){
-
+/** Главное меню, запускаем программу*/
             @Override
             public void run() {
                 TitlesFrame ps = new TitlesFrame();

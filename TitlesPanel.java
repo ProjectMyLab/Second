@@ -26,7 +26,8 @@ implements ActionListener {
     private int shape;
 
     public TitlesPanel(int _shape) {
-// _shape get the value that will be used to perform tasks according to the embodiment
+/** Инициализация, получаем параметр для выполнения варианта*/
+
         this.shape = _shape;
         this.animation = new Timer(50, this);
         this.animation.setInitialDelay(50);
@@ -41,7 +42,7 @@ implements ActionListener {
     }
 
     private void doDrawing(Graphics g) {
-// we calculate parameters for figure drawing
+/** Метод для рисования фигур*/
         this.is_done = false;
         this.g2d = (Graphics2D)g;
         this.g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -49,7 +50,6 @@ implements ActionListener {
         Insets insets = this.getInsets();
         int w = size.width - insets.left - insets.right;
         int h = size.height - insets.top - insets.bottom;
-// the value obtained shape ask Shape Factory for embodiment
         ShapeFactory shape = new ShapeFactory(this.shape);
         this.g2d.setStroke(shape.stroke);
         this.g2d.setPaint(shape.paint);
